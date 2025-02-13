@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab4-CC",
+      "program": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab4-CC/build/Debug/outDebug"
+    }
+  ]
+}

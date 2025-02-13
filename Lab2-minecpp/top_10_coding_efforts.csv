@@ -1,0 +1,523 @@
+,Before Bug fix,After Bug fix,Location,Bug type,Commit Message,Project URL,File Path,Fixed Commit,Buggy Commit,Test File,Coding Effort,Constructs,Lizard Features Buggy,Lizard Features Fixed,BLEU,crystalBLEU_score,BERT_score
+369,"1527             custom_weights_loaders.append(PredictionHeadLoader(self, error_on_missing=False))
+1528         super().load_adapter_fusion(adapter_fusion_name_or_path, load_as, custom_weights_loaders, set_active)
+1529 
+1530     def save_all_heads(self, save_directory):
+1531         os.makedirs(save_directory, exist_ok=True)
+1532         for head_name in self.heads:
+1533             save_path = join(save_directory, head_name)
+1534             self.save_head(save_path, head_name)
+1535 
+1536     def get_labels(self):
+","1600             **kwargs,
+1601         )
+1602 
+1603     def save_all_heads(self, save_directory: str, use_safetensors: bool = False):
+1604         """"""Saves all prediction heads of this model to subfolders of the given location.
+1605 
+1606         Args:
+1607             save_directory (str): Path to the base directory where prediction heads should be saved.
+1608             use_safetensors (bool, optional): If True, weights are saved via `safetensors`. Otherwise, the regular torch save method is used.
+1609         """"""
+1610         os.makedirs(save_directory, exist_ok=True)
+1611         for head_name in self.heads:
+1612             save_path = join(save_directory, head_name)
+1613             self.save_head(save_path, head_name, use_safetensors=use_safetensors)
+1614 
+1615     def get_labels(self):
+","Before: 1534
+After: 1613",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,11839,"{'module': 1, 'expression_statement': 5, 'call': 7, 'attribute': 5, 'identifier': 29, '.': 5, 'argument_list': 7, '(': 8, ',': 8, 'keyword_argument': 2, '=': 3, 'false': 1, ')': 8, 'function_definition': 1, 'def': 1, 'parameters': 1, ':': 2, 'block': 2, 'true': 1, 'for_statement': 1, 'for': 1, 'in': 1, 'assignment': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.208976359348726,0.1590526730639282,0.79
+368,"1527             custom_weights_loaders.append(PredictionHeadLoader(self, error_on_missing=False))
+1528         super().load_adapter_fusion(adapter_fusion_name_or_path, load_as, custom_weights_loaders, set_active)
+1529 
+1530     def save_all_heads(self, save_directory):
+1531         os.makedirs(save_directory, exist_ok=True)
+1532         for head_name in self.heads:
+1533             save_path = join(save_directory, head_name)
+1534             self.save_head(save_path, head_name)
+1535 
+1536     def get_labels(self):
+","1600             **kwargs,
+1601         )
+1602 
+1603     def save_all_heads(self, save_directory: str, use_safetensors: bool = False):
+1604         """"""Saves all prediction heads of this model to subfolders of the given location.
+1605 
+1606         Args:
+1607             save_directory (str): Path to the base directory where prediction heads should be saved.
+1608             use_safetensors (bool, optional): If True, weights are saved via `safetensors`. Otherwise, the regular torch save method is used.
+1609         """"""
+1610         os.makedirs(save_directory, exist_ok=True)
+1611         for head_name in self.heads:
+1612             save_path = join(save_directory, head_name)
+1613             self.save_head(save_path, head_name, use_safetensors=use_safetensors)
+1614 
+1615     def get_labels(self):
+","Before: 1530
+After: 1606, 1607, 1608, 1609",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,11790,"{'module': 1, 'expression_statement': 5, 'call': 7, 'attribute': 5, 'identifier': 29, '.': 5, 'argument_list': 7, '(': 8, ',': 8, 'keyword_argument': 2, '=': 3, 'false': 1, ')': 8, 'function_definition': 1, 'def': 1, 'parameters': 1, ':': 2, 'block': 2, 'true': 1, 'for_statement': 1, 'for': 1, 'in': 1, 'assignment': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.208976359348726,0.1590526730639282,0.79
+367,"1512             loader = PredictionHeadLoader(self)
+1513             loader.save(save_directory, head_name)
+1514 
+1515     def load_adapter_fusion(
+1516         self,
+1517         adapter_fusion_name_or_path: str,
+1518         load_as: str = None,
+1519         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1520         set_active: bool = False,
+1521         with_head: bool = True,
+1522         **kwargs
+1523     ) -> str:
+1524         if with_head:
+1525             if custom_weights_loaders is None:
+1526                 custom_weights_loaders = []
+1527             custom_weights_loaders.append(PredictionHeadLoader(self, error_on_missing=False))
+1528         super().load_adapter_fusion(adapter_fusion_name_or_path, load_as, custom_weights_loaders, set_active)
+1529 
+1530     def save_all_heads(self, save_directory):
+","1575             loader = PredictionHeadLoader(self, use_safetensors=use_safetensors)
+1576             loader.save(save_directory, head_name)
+1577 
+1578     def load_adapter_fusion(
+1579         self,
+1580         adapter_fusion_name_or_path: str,
+1581         load_as: str = None,
+1582         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1583         set_active: bool = False,
+1584         with_head: bool = True,
+1585         use_safetensors: bool = False,
+1586         **kwargs
+1587     ) -> str:
+1588         if with_head:
+1589             if custom_weights_loaders is None:
+1590                 custom_weights_loaders = []
+1591             custom_weights_loaders.append(
+1592                 PredictionHeadLoader(self, error_on_missing=False, use_safetensors=use_safetensors)
+1593             )
+1594         super().load_adapter_fusion(
+1595             adapter_fusion_name_or_path,
+1596             load_as,
+1597             custom_weights_loaders,
+1598             set_active,
+1599             use_safetensors=use_safetensors,
+1600             **kwargs,
+1601         )
+1602 
+1603     def save_all_heads(self, save_directory: str, use_safetensors: bool = False):
+","Before: 1527, 1528
+After: 1591, 1592, 1593, 1594, 1595, 1596, 1597, 1598, 1599, 1600, 1601, 1602, 1603, 1604",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,11759,"{'module': 1, 'expression_statement': 5, 'assignment': 2, 'identifier': 37, '=': 7, 'call': 6, 'argument_list': 6, '(': 7, ')': 7, 'attribute': 3, '.': 3, ',': 11, 'function_definition': 1, 'def': 1, 'parameters': 1, 'typed_parameter': 1, ':': 8, 'type': 8, 'typed_default_parameter': 4, 'none': 3, 'generic_type': 2, 'type_parameter': 2, '[': 3, ']': 3, 'false': 2, 'true': 1, 'dictionary_splat_pattern': 1, '**': 1, '->': 1, 'block': 3, 'if_statement': 2, 'if': 2, 'comparison_operator': 1, 'is': 1, 'list': 1, 'keyword_argument': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.3984445355014112,0.3747511001898121,0.89
+366,"1473                 custom_weights_loaders=custom_weights_loaders,
+1474             )
+1475 
+1476     def save_adapter_fusion(
+1477         self,
+1478         save_directory: str,
+1479         adapter_names: Union[Fuse, list, str],
+1480         meta_dict: dict = None,
+1481         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1482         with_head: Union[bool, str] = False,
+1483     ):
+1484         """"""
+1485         Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+1486         using `load_adapter_fusion()`.
+1487 
+1488         Args:
+1489             save_directory (str): Path to a directory where the AdapterFusion should be saved.
+1490             adapter_names (Union[Fuse, list, str]): AdapterFusion to be saved.
+1491             with_head (Union[bool, str]):
+1492                 If True, will save a head with the same name as the AdapterFusionLayer. If a string, this will be used
+1493                 as the name of the head to be saved.
+1494 
+1495         Raises:
+1496             ValueError: If the given AdapterFusion name is invalid.
+1497         """"""
+1498         super().save_adapter_fusion(save_directory, adapter_names, meta_dict, custom_weights_loaders)
+1499 
+1500         if with_head:
+1501             # Make sure to cover the different options for adapter_names
+1502             if isinstance(with_head, str):
+1503                 head_name = with_head
+1504             elif isinstance(adapter_names, Fuse):
+1505                 head_name = adapter_names.name
+1506             elif isinstance(adapter_names, list):
+1507                 head_name = "","".join(adapter_names)
+1508             else:
+1509                 head_name = adapter_names
+1510             if head_name not in self.heads:
+1511                 raise ValueError(""No head with name {} found"".format(head_name))
+1512             loader = PredictionHeadLoader(self)
+1513             loader.save(save_directory, head_name)
+1514 
+1515     def load_adapter_fusion(
+","1532                 use_safetensors=use_safetensors,
+1533             )
+1534 
+1535     def save_adapter_fusion(
+1536         self,
+1537         save_directory: str,
+1538         adapter_names: Union[Fuse, list, str],
+1539         meta_dict: dict = None,
+1540         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1541         with_head: Union[bool, str] = False,
+1542         use_safetensors: bool = False,
+1543     ):
+1544         """"""
+1545         Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+1546         using `load_adapter_fusion()`.
+1547 
+1548         Args:
+1549             save_directory (str): Path to a directory where the AdapterFusion should be saved.
+1550             adapter_names (Union[Fuse, list, str]): AdapterFusion to be saved.
+1551             with_head (Union[bool, str]):
+1552                 If True, will save a head with the same name as the AdapterFusionLayer. If a string, this will be used
+1553                 as the name of the head to be saved.
+1554             use_safetensors (bool, optional): If True, weights are saved via `safetensors`. Otherwise, the regular torch save method is used.
+1555 
+1556         Raises:
+1557             ValueError: If the given AdapterFusion name is invalid.
+1558         """"""
+1559         super().save_adapter_fusion(
+1560             save_directory, adapter_names, meta_dict, custom_weights_loaders, use_safetensors=use_safetensors
+1561         )
+1562 
+1563         if with_head:
+1564             # Make sure to cover the different options for adapter_names
+1565             if isinstance(with_head, str):
+1566                 head_name = with_head
+1567             elif isinstance(adapter_names, Fuse):
+1568                 head_name = adapter_names.name
+1569             elif isinstance(adapter_names, list):
+1570                 head_name = "","".join(adapter_names)
+1571             else:
+1572                 head_name = adapter_names
+1573             if head_name not in self.heads:
+1574                 raise ValueError(""No head with name {} found"".format(head_name))
+1575             loader = PredictionHeadLoader(self, use_safetensors=use_safetensors)
+1576             loader.save(save_directory, head_name)
+1577 
+1578     def load_adapter_fusion(
+","Before: 1512
+After: 1575",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,11641,"{'module': 1, 'ERROR': 2, 'expression_statement': 9, 'assignment': 6, 'identifier': 60, '=': 9, 'pattern_list': 1, ',': 17, ')': 12, 'function_definition': 1, 'def': 1, 'parameters': 1, '(': 11, 'typed_parameter': 2, ':': 12, 'type': 12, 'generic_type': 4, 'type_parameter': 4, '[': 4, ']': 4, 'typed_default_parameter': 3, 'none': 2, 'false': 1, 'block': 7, 'string': 3, 'string_start': 3, 'string_content': 3, 'string_end': 3, 'call': 10, 'attribute': 6, 'argument_list': 10, '.': 6, 'if_statement': 3, 'if': 3, 'comment': 1, 'elif_clause': 2, 'elif': 2, 'else_clause': 1, 'else': 1, 'comparison_operator': 1, 'not in': 2, 'raise_statement': 1, 'raise': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.6040809048700183,0.5908919580059496,0.912
+365,"1473                 custom_weights_loaders=custom_weights_loaders,
+1474             )
+1475 
+1476     def save_adapter_fusion(
+1477         self,
+1478         save_directory: str,
+1479         adapter_names: Union[Fuse, list, str],
+1480         meta_dict: dict = None,
+1481         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1482         with_head: Union[bool, str] = False,
+1483     ):
+1484         """"""
+1485         Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+1486         using `load_adapter_fusion()`.
+1487 
+1488         Args:
+1489             save_directory (str): Path to a directory where the AdapterFusion should be saved.
+1490             adapter_names (Union[Fuse, list, str]): AdapterFusion to be saved.
+1491             with_head (Union[bool, str]):
+1492                 If True, will save a head with the same name as the AdapterFusionLayer. If a string, this will be used
+1493                 as the name of the head to be saved.
+1494 
+1495         Raises:
+1496             ValueError: If the given AdapterFusion name is invalid.
+1497         """"""
+1498         super().save_adapter_fusion(save_directory, adapter_names, meta_dict, custom_weights_loaders)
+1499 
+1500         if with_head:
+1501             # Make sure to cover the different options for adapter_names
+1502             if isinstance(with_head, str):
+1503                 head_name = with_head
+1504             elif isinstance(adapter_names, Fuse):
+1505                 head_name = adapter_names.name
+1506             elif isinstance(adapter_names, list):
+1507                 head_name = "","".join(adapter_names)
+1508             else:
+1509                 head_name = adapter_names
+1510             if head_name not in self.heads:
+1511                 raise ValueError(""No head with name {} found"".format(head_name))
+1512             loader = PredictionHeadLoader(self)
+1513             loader.save(save_directory, head_name)
+1514 
+1515     def load_adapter_fusion(
+","1532                 use_safetensors=use_safetensors,
+1533             )
+1534 
+1535     def save_adapter_fusion(
+1536         self,
+1537         save_directory: str,
+1538         adapter_names: Union[Fuse, list, str],
+1539         meta_dict: dict = None,
+1540         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1541         with_head: Union[bool, str] = False,
+1542         use_safetensors: bool = False,
+1543     ):
+1544         """"""
+1545         Saves an AdapterFusion layer and its configuration file to a directory so that it can be shared or reloaded
+1546         using `load_adapter_fusion()`.
+1547 
+1548         Args:
+1549             save_directory (str): Path to a directory where the AdapterFusion should be saved.
+1550             adapter_names (Union[Fuse, list, str]): AdapterFusion to be saved.
+1551             with_head (Union[bool, str]):
+1552                 If True, will save a head with the same name as the AdapterFusionLayer. If a string, this will be used
+1553                 as the name of the head to be saved.
+1554             use_safetensors (bool, optional): If True, weights are saved via `safetensors`. Otherwise, the regular torch save method is used.
+1555 
+1556         Raises:
+1557             ValueError: If the given AdapterFusion name is invalid.
+1558         """"""
+1559         super().save_adapter_fusion(
+1560             save_directory, adapter_names, meta_dict, custom_weights_loaders, use_safetensors=use_safetensors
+1561         )
+1562 
+1563         if with_head:
+1564             # Make sure to cover the different options for adapter_names
+1565             if isinstance(with_head, str):
+1566                 head_name = with_head
+1567             elif isinstance(adapter_names, Fuse):
+1568                 head_name = adapter_names.name
+1569             elif isinstance(adapter_names, list):
+1570                 head_name = "","".join(adapter_names)
+1571             else:
+1572                 head_name = adapter_names
+1573             if head_name not in self.heads:
+1574                 raise ValueError(""No head with name {} found"".format(head_name))
+1575             loader = PredictionHeadLoader(self, use_safetensors=use_safetensors)
+1576             loader.save(save_directory, head_name)
+1577 
+1578     def load_adapter_fusion(
+","Before: 1498
+After: 1559, 1560, 1561",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,11520,"{'module': 1, 'ERROR': 2, 'expression_statement': 9, 'assignment': 6, 'identifier': 60, '=': 9, 'pattern_list': 1, ',': 17, ')': 12, 'function_definition': 1, 'def': 1, 'parameters': 1, '(': 11, 'typed_parameter': 2, ':': 12, 'type': 12, 'generic_type': 4, 'type_parameter': 4, '[': 4, ']': 4, 'typed_default_parameter': 3, 'none': 2, 'false': 1, 'block': 7, 'string': 3, 'string_start': 3, 'string_content': 3, 'string_end': 3, 'call': 10, 'attribute': 6, 'argument_list': 10, '.': 6, 'if_statement': 3, 'if': 3, 'comment': 1, 'elif_clause': 2, 'elif': 2, 'else_clause': 1, 'else': 1, 'comparison_operator': 1, 'not in': 2, 'raise_statement': 1, 'raise': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.6040809048700183,0.5908919580059496,0.912
+364,"1387         loader = PredictionHeadLoader(self, convert_to_flex_head=self._convert_to_flex_head)
+1388         return loader.load(save_directory, load_as=load_as, id2label=id2label, **kwargs)
+1389 
+1390     def save_adapter(
+1391         self,
+1392         save_directory: str,
+1393         adapter_name: str,
+1394         with_head: bool = True,
+1395         meta_dict: dict = None,
+1396         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1397     ):
+1398         if with_head:
+1399             if custom_weights_loaders is None:
+1400                 custom_weights_loaders = []
+1401             custom_weights_loaders.append(PredictionHeadLoader(self, error_on_missing=False))
+1402         super().save_adapter(
+1403             save_directory,
+1404             adapter_name,
+1405             meta_dict=meta_dict,
+1406             custom_weights_loaders=custom_weights_loaders,
+1407         )
+1408 
+1409     def load_adapter(
+","1437         )
+1438         return loader.load(save_directory, load_as=load_as, id2label=id2label, **kwargs)
+1439 
+1440     def save_adapter(
+1441         self,
+1442         save_directory: str,
+1443         adapter_name: str,
+1444         with_head: bool = True,
+1445         meta_dict: dict = None,
+1446         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1447         use_safetensors: bool = False,
+1448     ):
+1449         if with_head:
+1450             if custom_weights_loaders is None:
+1451                 custom_weights_loaders = []
+1452             custom_weights_loaders.append(
+1453                 PredictionHeadLoader(self, error_on_missing=False, use_safetensors=use_safetensors)
+1454             )
+1455         super().save_adapter(
+1456             save_directory,
+1457             adapter_name,
+1458             meta_dict=meta_dict,
+1459             custom_weights_loaders=custom_weights_loaders,
+1460             use_safetensors=use_safetensors,
+1461         )
+1462 
+1463     def load_adapter(
+","Before: 1401
+After: 1452, 1453, 1454, 1460",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,10898,"{'module': 1, 'expression_statement': 4, 'assignment': 2, 'identifier': 44, '=': 11, 'call': 6, 'argument_list': 6, '(': 7, ',': 15, 'keyword_argument': 6, 'attribute': 4, '.': 4, ')': 7, 'return_statement': 1, 'return': 1, 'dictionary_splat': 1, '**': 1, 'function_definition': 1, 'def': 1, 'parameters': 1, 'typed_parameter': 2, ':': 8, 'type': 7, 'typed_default_parameter': 3, 'true': 1, 'none': 3, 'generic_type': 2, 'type_parameter': 2, '[': 3, ']': 3, 'block': 3, 'if_statement': 2, 'if': 2, 'comparison_operator': 1, 'is': 1, 'list': 1, 'false': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.4440788292556071,0.4102893288943839,0.896
+363,"1383         loader = PredictionHeadLoader(self)
+1384         loader.save(save_directory, name=head_name)
+1385 
+1386     def load_head(self, save_directory, load_as=None, id2label=None, **kwargs):
+1387         loader = PredictionHeadLoader(self, convert_to_flex_head=self._convert_to_flex_head)
+1388         return loader.load(save_directory, load_as=load_as, id2label=id2label, **kwargs)
+1389 
+1390     def save_adapter(
+","1412         loader = PredictionHeadLoader(self, use_safetensors=use_safetensors)
+1413         loader.save(save_directory, name=head_name)
+1414 
+1415     def load_head(
+1416         self,
+1417         save_directory: str,
+1418         load_as: str = None,
+1419         id2label: Dict[int, str] = None,
+1420         use_safetensors: bool = False,
+1421         **kwargs
+1422     ) -> str:
+1423         """"""Loads a model prediction head from a directory where it was saved using `save_head()`.
+1424 
+1425         Args:
+1426             save_directory (str): Path to the directory where the prediction head is saved.
+1427             load_as (str, optional): Load the AdapterFusion using this name.
+1428                     By default, the name with which the AdapterFusion layer was saved will be used.
+1429             id2label (Dict[int, str], optional): Provide a custom mapping from class ids to class labels. Defaults to None.
+1430             use_safetensors (bool, optional): If True, weights are loaded via `safetensors` if safetensors checkpoint is available. Otherwise, the regular torch save method is used.
+1431 
+1432         Returns:
+1433             str: The name with which the prediction head was added to the model.
+1434         """"""
+1435         loader = PredictionHeadLoader(
+1436             self, convert_to_flex_head=self._convert_to_flex_head, use_safetensors=use_safetensors
+1437         )
+1438         return loader.load(save_directory, load_as=load_as, id2label=id2label, **kwargs)
+1439 
+1440     def save_adapter(
+","Before: 1386, 1387
+After: 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,10757,"{'module': 1, 'expression_statement': 3, 'assignment': 2, 'identifier': 28, '=': 8, 'call': 4, 'argument_list': 4, '(': 5, ')': 5, 'attribute': 3, '.': 3, ',': 9, 'keyword_argument': 4, 'function_definition': 1, 'def': 1, 'parameters': 1, 'default_parameter': 2, 'none': 2, 'dictionary_splat_pattern': 1, '**': 2, ':': 1, 'block': 1, 'return_statement': 1, 'return': 1, 'dictionary_splat': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.1132234341411267,0.1003341883024026,0.764
+362,"1379             self.base_model.train_adapter_fusion(adapter_setup, unfreeze_adapters=unfreeze_adapters)
+1380         self.freeze_embeddings()
+1381 
+1382     def save_head(self, save_directory: str, head_name: str = None):
+1383         loader = PredictionHeadLoader(self)
+1384         loader.save(save_directory, name=head_name)
+1385 
+1386     def load_head(self, save_directory, load_as=None, id2label=None, **kwargs):
+","1401             self.base_model.train_adapter_fusion(adapter_setup, unfreeze_adapters=unfreeze_adapters)
+1402         self.freeze_embeddings()
+1403 
+1404     def save_head(self, save_directory: str, head_name: str = None, use_safetensors: bool = False) -> None:
+1405         """"""Saves a model prediction head to a directory such that it can be reloaded using `load_head()`.
+1406 
+1407         Args:
+1408             save_directory (str): Path to the directory where the prediction head should be saved.
+1409             head_name (str, optional): Name of the head to save. Set to None if model only has one head. Defaults to None.
+1410             use_safetensors (bool, optional): If True, weights are saved via `safetensors`. Otherwise, the regular torch save method is used.
+1411         """"""
+1412         loader = PredictionHeadLoader(self, use_safetensors=use_safetensors)
+1413         loader.save(save_directory, name=head_name)
+1414 
+1415     def load_head(
+","Before: 1382, 1383
+After: 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412",add use_safetensors argument to modeladaptersmixin,Support saving & loading via Safetensors (#692),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,0c0e03434e5bf6c03eae7a331b9f6d65ad49724d,6ab81857ea65f887c933312eb120f095b66e216a,0,10707,"{'module': 1, 'expression_statement': 4, 'call': 4, 'attribute': 4, 'identifier': 22, '.': 4, 'argument_list': 4, '(': 5, ',': 4, 'keyword_argument': 2, '=': 4, ')': 5, 'function_definition': 1, 'def': 1, 'parameters': 1, 'typed_parameter': 1, ':': 3, 'type': 2, 'typed_default_parameter': 1, 'none': 1, 'block': 1, 'assignment': 1}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 5, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 36, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.179028216293288,0.1449954051574278,0.814
+54,"1357             **kwargs,
+1358         )
+1359 
+1360     def save_all_adapters(
+1361         self,
+1362         save_directory: str,
+1363         with_head: bool = True,
+1364         meta_dict: dict = None,
+1365         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1366     ):
+1367         os.makedirs(save_directory, exist_ok=True)
+1368         for name in self.config.adapters:
+1369             adapter_config = self.config.adapters.get(name)
+1370             h = get_adapter_config_hash(adapter_config)
+1371             save_path = join(save_directory, name)
+1372             if meta_dict:
+1373                 meta_dict.update({""config_id"": h})
+1374             else:
+1375                 meta_dict = {""config_id"": h}
+1376             self.save_adapter(
+1377                 save_path,
+1378                 name,
+1379                 meta_dict=meta_dict,
+1380                 with_head=with_head,
+1381                 custom_weights_loaders=custom_weights_loaders,
+1382             )
+1383 
+1384     def save_adapter_fusion(
+","1358             **kwargs,
+1359         )
+1360 
+1361     def save_all_adapters(
+1362         self,
+1363         save_directory: str,
+1364         with_head: bool = True,
+1365         meta_dict: dict = None,
+1366         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1367     ):
+1368         os.makedirs(save_directory, exist_ok=True)
+1369         for name in self.adapters_config:
+1370             adapter_config = self.adapters_config.get(name)
+1371             h = get_adapter_config_hash(adapter_config)
+1372             save_path = join(save_directory, name)
+1373             if meta_dict:
+1374                 meta_dict.update({""config_id"": h})
+1375             else:
+1376                 meta_dict = {""config_id"": h}
+1377             self.save_adapter(
+1378                 save_path,
+1379                 name,
+1380                 meta_dict=meta_dict,
+1381                 with_head=with_head,
+1382                 custom_weights_loaders=custom_weights_loaders,
+1383             )
+1384 
+1385     def save_adapter_fusion(
+","Before: 1368, 1369
+After: 1369, 1370",add init_adapters_config method,Separate adapters config from model config (#31),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,b06d69bedd10592ba1187df844c5752c8213ce55,234c7083f9daef39a147c1848dc99bdd39870c20,0,10523,"{'module': 1, 'ERROR': 1, '*': 2, 'list_splat': 1, 'identifier': 50, ',': 13, ')': 8, 'function_definition': 1, 'def': 1, 'parameters': 1, '(': 7, 'typed_parameter': 1, ':': 10, 'type': 6, 'typed_default_parameter': 3, '=': 11, 'true': 2, 'none': 2, 'generic_type': 2, 'type_parameter': 2, '[': 2, ']': 2, 'block': 4, 'expression_statement': 7, 'call': 6, 'attribute': 8, '.': 8, 'argument_list': 6, 'keyword_argument': 4, 'for_statement': 1, 'for': 1, 'in': 1, 'assignment': 4, 'if_statement': 1, 'if': 1, 'dictionary': 2, '{': 2, 'pair': 2, 'string': 2, 'string_start': 2, 'string_content': 2, 'string_end': 2, '}': 2, 'else_clause': 1, 'else': 1}","{'cyclomatic_complexity': 2, 'nloc': 6, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , config , ** kwargs )', 'start_line': 40, 'end_line': 49, 'full_parameters': ['self', ' config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 6, 'token_count': 67, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 34, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/envs/minecpp/lib/python3.11/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.5365840648909657,0.5342547711264545,0.989
+892,"1357             **kwargs,
+1358         )
+1359 
+1360     def save_all_adapters(
+1361         self,
+1362         save_directory: str,
+1363         with_head: bool = True,
+1364         meta_dict: dict = None,
+1365         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1366     ):
+1367         os.makedirs(save_directory, exist_ok=True)
+1368         for name in self.config.adapters:
+1369             adapter_config = self.config.adapters.get(name)
+1370             h = get_adapter_config_hash(adapter_config)
+1371             save_path = join(save_directory, name)
+1372             if meta_dict:
+1373                 meta_dict.update({""config_id"": h})
+1374             else:
+1375                 meta_dict = {""config_id"": h}
+1376             self.save_adapter(
+1377                 save_path,
+1378                 name,
+1379                 meta_dict=meta_dict,
+1380                 with_head=with_head,
+1381                 custom_weights_loaders=custom_weights_loaders,
+1382             )
+1383 
+1384     def save_adapter_fusion(
+","1358             **kwargs,
+1359         )
+1360 
+1361     def save_all_adapters(
+1362         self,
+1363         save_directory: str,
+1364         with_head: bool = True,
+1365         meta_dict: dict = None,
+1366         custom_weights_loaders: Optional[List[WeightsLoader]] = None,
+1367     ):
+1368         os.makedirs(save_directory, exist_ok=True)
+1369         for name in self.adapters_config:
+1370             adapter_config = self.adapters_config.get(name)
+1371             h = get_adapter_config_hash(adapter_config)
+1372             save_path = join(save_directory, name)
+1373             if meta_dict:
+1374                 meta_dict.update({""config_id"": h})
+1375             else:
+1376                 meta_dict = {""config_id"": h}
+1377             self.save_adapter(
+1378                 save_path,
+1379                 name,
+1380                 meta_dict=meta_dict,
+1381                 with_head=with_head,
+1382                 custom_weights_loaders=custom_weights_loaders,
+1383             )
+1384 
+1385     def save_adapter_fusion(
+","Before: 1368, 1369
+After: 1369, 1370",add init_adapters_config method,Separate adapters config from model config (#31),https://github.com/adapter-hub/adapters,src/adapters/model_mixin.py,b06d69bedd10592ba1187df844c5752c8213ce55,234c7083f9daef39a147c1848dc99bdd39870c20,0,10523,"{'module': 1, 'ERROR': 1, '*': 2, 'list_splat': 1, 'identifier': 50, ',': 13, ')': 8, 'function_definition': 1, 'def': 1, 'parameters': 1, '(': 7, 'typed_parameter': 1, ':': 10, 'type': 6, 'typed_default_parameter': 3, '=': 11, 'true': 2, 'none': 2, 'generic_type': 2, 'type_parameter': 2, '[': 2, ']': 2, 'block': 4, 'expression_statement': 7, 'call': 6, 'attribute': 8, '.': 8, 'argument_list': 6, 'keyword_argument': 4, 'for_statement': 1, 'for': 1, 'in': 1, 'assignment': 4, 'if_statement': 1, 'if': 1, 'dictionary': 2, '{': 2, 'pair': 2, 'string': 2, 'string_start': 2, 'string_content': 2, 'string_end': 2, '}': 2, 'else_clause': 1, 'else': 1}","{'cyclomatic_complexity': 2, 'nloc': 6, 'token_count': 59, 'name': 'init_adapters', 'long_name': 'init_adapters( self , config , ** kwargs )', 'start_line': 40, 'end_line': 49, 'full_parameters': ['self', ' config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/lib/python3.9/site-packages/Minecpp/adapters/prev/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}","{'cyclomatic_complexity': 2, 'nloc': 6, 'token_count': 67, 'name': 'init_adapters', 'long_name': 'init_adapters( self , model_config , adapters_config , ** kwargs )', 'start_line': 34, 'end_line': 42, 'full_parameters': ['self', ' model_config', ' adapters_config', ' ** kwargs'], 'filename': '/Users/guntas13/micromamba/lib/python3.9/site-packages/Minecpp/adapters/curr/src/adapters/model_mixin.py', 'top_nesting_level': 1, 'fan_in': 0, 'fan_out': 0, 'general_fan_out': 0}",0.5365840648909657,0.5342547711264545,0.989
