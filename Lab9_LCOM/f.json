@@ -1,0 +1,968 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "private_gpt",
+      "private_gpt.__main__",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.custom",
+      "private_gpt.components.embedding.custom.sagemaker",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.ingest.ingest_helper",
+      "private_gpt.components.llm",
+      "private_gpt.components.llm.custom",
+      "private_gpt.components.llm.custom.sagemaker",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.llm.prompt_helper",
+      "private_gpt.components.node_store",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store",
+      "private_gpt.components.vector_store.batched_chroma",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.constants",
+      "private_gpt.di",
+      "private_gpt.launcher",
+      "private_gpt.main",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.paths",
+      "private_gpt.server",
+      "private_gpt.server.chat",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.health",
+      "private_gpt.server.health.health_router",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.server.ingest.ingest_watcher",
+      "private_gpt.server.ingest.model",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.settings.settings_loader",
+      "private_gpt.settings.yaml",
+      "private_gpt.ui",
+      "private_gpt.ui.images",
+      "private_gpt.ui.ui",
+      "private_gpt.utils",
+      "private_gpt.utils.eta",
+      "private_gpt.utils.ollama",
+      "private_gpt.utils.retry",
+      "private_gpt.utils.typing"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "private_gpt": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.di",
+      "private_gpt.launcher",
+      "private_gpt.main",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.paths",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.server.utils.auth",
+      "private_gpt.settings.settings",
+      "private_gpt.settings.settings_loader",
+      "private_gpt.ui.ui",
+      "private_gpt.utils.ollama"
+    ],
+    "name": "private_gpt",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/__init__.py"
+  },
+  "private_gpt.__main__": {
+    "bacon": 1,
+    "imported_by": ["__main__"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.main",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.__main__",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/__main__.py"
+  },
+  "private_gpt.components": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/__init__.py"
+  },
+  "private_gpt.components.embedding": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components.embedding",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/embedding/__init__.py"
+  },
+  "private_gpt.components.embedding.custom": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component"
+    ],
+    "name": "private_gpt.components.embedding.custom",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/embedding/custom/__init__.py"
+  },
+  "private_gpt.components.embedding.custom.sagemaker": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component"
+    ],
+    "name": "private_gpt.components.embedding.custom.sagemaker",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/embedding/custom/sagemaker.py"
+  },
+  "private_gpt.components.embedding.embedding_component": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.custom",
+      "private_gpt.components.embedding.custom.sagemaker",
+      "private_gpt.paths",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.utils",
+      "private_gpt.utils.ollama"
+    ],
+    "name": "private_gpt.components.embedding.embedding_component",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/embedding/embedding_component.py"
+  },
+  "private_gpt.components.ingest": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components.ingest",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/ingest/__init__.py"
+  },
+  "private_gpt.components.ingest.ingest_component": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.server.ingest.ingest_service"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.ingest",
+      "private_gpt.components.ingest.ingest_helper",
+      "private_gpt.paths",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.utils",
+      "private_gpt.utils.eta"
+    ],
+    "name": "private_gpt.components.ingest.ingest_component",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/ingest/ingest_component.py"
+  },
+  "private_gpt.components.ingest.ingest_helper": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.ingest.ingest_component"
+    ],
+    "name": "private_gpt.components.ingest.ingest_helper",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/ingest/ingest_helper.py"
+  },
+  "private_gpt.components.llm": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components.llm",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/llm/__init__.py"
+  },
+  "private_gpt.components.llm.custom": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.components.llm.llm_component"],
+    "name": "private_gpt.components.llm.custom",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/llm/custom/__init__.py"
+  },
+  "private_gpt.components.llm.custom.sagemaker": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.components.llm.llm_component"],
+    "name": "private_gpt.components.llm.custom.sagemaker",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/llm/custom/sagemaker.py"
+  },
+  "private_gpt.components.llm.llm_component": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.llm",
+      "private_gpt.components.llm.custom",
+      "private_gpt.components.llm.custom.sagemaker",
+      "private_gpt.components.llm.prompt_helper",
+      "private_gpt.paths",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.utils",
+      "private_gpt.utils.ollama"
+    ],
+    "name": "private_gpt.components.llm.llm_component",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/llm/llm_component.py"
+  },
+  "private_gpt.components.llm.prompt_helper": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.components.llm.llm_component"],
+    "name": "private_gpt.components.llm.prompt_helper",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/llm/prompt_helper.py"
+  },
+  "private_gpt.components.node_store": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components.node_store",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/node_store/__init__.py"
+  },
+  "private_gpt.components.node_store.node_store_component": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.paths",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.components.node_store.node_store_component",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/node_store/node_store_component.py"
+  },
+  "private_gpt.components.vector_store": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.components.vector_store",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/vector_store/__init__.py"
+  },
+  "private_gpt.components.vector_store.batched_chroma": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.vector_store.vector_store_component"
+    ],
+    "name": "private_gpt.components.vector_store.batched_chroma",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/vector_store/batched_chroma.py"
+  },
+  "private_gpt.components.vector_store.vector_store_component": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.vector_store",
+      "private_gpt.components.vector_store.batched_chroma",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.paths",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.components.vector_store.vector_store_component",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/components/vector_store/vector_store_component.py"
+  },
+  "private_gpt.constants": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.paths",
+      "private_gpt.settings.settings_loader",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.constants",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/constants.py"
+  },
+  "private_gpt.di": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.main",
+      "private_gpt.settings.settings",
+      "private_gpt.ui.ui"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.di",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/di.py"
+  },
+  "private_gpt.launcher": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.main"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.server",
+      "private_gpt.server.chat",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.completions",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.health",
+      "private_gpt.server.health.health_router",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.ui",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.launcher",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/launcher.py"
+  },
+  "private_gpt.main": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.__main__"],
+    "imports": ["private_gpt", "private_gpt.di", "private_gpt.launcher"],
+    "name": "private_gpt.main",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/main.py"
+  },
+  "private_gpt.open_ai": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.open_ai",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/open_ai/__init__.py"
+  },
+  "private_gpt.open_ai.extensions": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.open_ai.extensions",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/open_ai/extensions/__init__.py"
+  },
+  "private_gpt.open_ai.extensions.context_filter": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.open_ai.extensions.context_filter",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/open_ai/extensions/context_filter.py"
+  },
+  "private_gpt.open_ai.openai_models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.completions.completions_router"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.server",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_service"
+    ],
+    "name": "private_gpt.open_ai.openai_models",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/open_ai/openai_models.py"
+  },
+  "private_gpt.paths": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store.vector_store_component"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.constants",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.paths",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/paths.py"
+  },
+  "private_gpt.server": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.server",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/__init__.py"
+  },
+  "private_gpt.server.chat": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.server.chat",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chat/__init__.py"
+  },
+  "private_gpt.server.chat.chat_router": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.server.completions.completions_router"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.server",
+      "private_gpt.server.chat",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth"
+    ],
+    "name": "private_gpt.server.chat.chat_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chat/chat_router.py"
+  },
+  "private_gpt.server.chat.chat_service": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.ui.ui"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.llm",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.server",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.server.chat.chat_service",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chat/chat_service.py"
+  },
+  "private_gpt.server.chunks": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.server.chunks",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chunks/__init__.py"
+  },
+  "private_gpt.server.chunks.chunks_router": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.server",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth"
+    ],
+    "name": "private_gpt.server.chunks.chunks_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chunks/chunks_router.py"
+  },
+  "private_gpt.server.chunks.chunks_service": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.ui.ui"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.llm",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.server",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.model"
+    ],
+    "name": "private_gpt.server.chunks.chunks_service",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/chunks/chunks_service.py"
+  },
+  "private_gpt.server.completions": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "name": "private_gpt.server.completions",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/completions/__init__.py"
+  },
+  "private_gpt.server.completions.completions_router": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.open_ai.openai_models",
+      "private_gpt.server",
+      "private_gpt.server.chat",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth"
+    ],
+    "name": "private_gpt.server.completions.completions_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/completions/completions_router.py"
+  },
+  "private_gpt.server.embeddings": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.server.embeddings.embeddings_router"
+    ],
+    "name": "private_gpt.server.embeddings",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/embeddings/__init__.py"
+  },
+  "private_gpt.server.embeddings.embeddings_router": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.server",
+      "private_gpt.server.embeddings",
+      "private_gpt.server.embeddings.embeddings_service",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth"
+    ],
+    "name": "private_gpt.server.embeddings.embeddings_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/embeddings/embeddings_router.py"
+  },
+  "private_gpt.server.embeddings.embeddings_service": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.embeddings.embeddings_router"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.embedding_component"
+    ],
+    "name": "private_gpt.server.embeddings.embeddings_service",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/embeddings/embeddings_service.py"
+  },
+  "private_gpt.server.health": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "name": "private_gpt.server.health",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/health/__init__.py"
+  },
+  "private_gpt.server.health.health_router": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "name": "private_gpt.server.health.health_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/health/health_router.py"
+  },
+  "private_gpt.server.ingest": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.launcher",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.server.ingest",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/ingest/__init__.py"
+  },
+  "private_gpt.server.ingest.ingest_router": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.server",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.server.ingest.model",
+      "private_gpt.server.utils",
+      "private_gpt.server.utils.auth"
+    ],
+    "name": "private_gpt.server.ingest.ingest_router",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/ingest/ingest_router.py"
+  },
+  "private_gpt.server.ingest.ingest_service": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.ui.ui"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.components",
+      "private_gpt.components.embedding",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.server",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.model",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.server.ingest.ingest_service",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/ingest/ingest_service.py"
+  },
+  "private_gpt.server.ingest.ingest_watcher": {
+    "bacon": 1,
+    "imported_by": ["__main__"],
+    "name": "private_gpt.server.ingest.ingest_watcher",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/ingest/ingest_watcher.py"
+  },
+  "private_gpt.server.ingest.model": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest.ingest_router",
+      "private_gpt.server.ingest.ingest_service"
+    ],
+    "name": "private_gpt.server.ingest.model",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/ingest/model.py"
+  },
+  "private_gpt.server.utils": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.ingest.ingest_router"
+    ],
+    "name": "private_gpt.server.utils",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/utils/__init__.py"
+  },
+  "private_gpt.server.utils.auth": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.server.chat.chat_router",
+      "private_gpt.server.chunks.chunks_router",
+      "private_gpt.server.completions.completions_router",
+      "private_gpt.server.embeddings.embeddings_router",
+      "private_gpt.server.ingest.ingest_router"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.settings",
+      "private_gpt.settings.settings"
+    ],
+    "name": "private_gpt.server.utils.auth",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/server/utils/auth.py"
+  },
+  "private_gpt.settings": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.di",
+      "private_gpt.launcher",
+      "private_gpt.paths",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.server.utils.auth",
+      "private_gpt.settings.settings",
+      "private_gpt.settings.settings_loader",
+      "private_gpt.ui.ui"
+    ],
+    "name": "private_gpt.settings",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/settings/__init__.py"
+  },
+  "private_gpt.settings.settings": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.components.node_store.node_store_component",
+      "private_gpt.components.vector_store.vector_store_component",
+      "private_gpt.di",
+      "private_gpt.launcher",
+      "private_gpt.paths",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.server.utils.auth",
+      "private_gpt.ui.ui"
+    ],
+    "imports": [
+      "private_gpt",
+      "private_gpt.di",
+      "private_gpt.settings",
+      "private_gpt.settings.settings_loader"
+    ],
+    "name": "private_gpt.settings.settings",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/settings/settings.py"
+  },
+  "private_gpt.settings.settings_loader": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.settings.settings"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.constants",
+      "private_gpt.settings",
+      "private_gpt.settings.yaml"
+    ],
+    "name": "private_gpt.settings.settings_loader",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/settings/settings_loader.py"
+  },
+  "private_gpt.settings.yaml": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.settings.settings_loader"],
+    "imports": ["yaml"],
+    "name": "private_gpt.settings.yaml",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/settings/yaml.py"
+  },
+  "private_gpt.ui": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher", "private_gpt.ui.ui"],
+    "name": "private_gpt.ui",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/ui/__init__.py"
+  },
+  "private_gpt.ui.images": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.ui.ui"],
+    "name": "private_gpt.ui.images",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/ui/images.py"
+  },
+  "private_gpt.ui.ui": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.launcher"],
+    "imports": [
+      "private_gpt",
+      "private_gpt.constants",
+      "private_gpt.di",
+      "private_gpt.open_ai",
+      "private_gpt.open_ai.extensions",
+      "private_gpt.open_ai.extensions.context_filter",
+      "private_gpt.server",
+      "private_gpt.server.chat",
+      "private_gpt.server.chat.chat_service",
+      "private_gpt.server.chunks",
+      "private_gpt.server.chunks.chunks_service",
+      "private_gpt.server.ingest",
+      "private_gpt.server.ingest.ingest_service",
+      "private_gpt.settings",
+      "private_gpt.settings.settings",
+      "private_gpt.ui",
+      "private_gpt.ui.images"
+    ],
+    "name": "private_gpt.ui.ui",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/ui/ui.py"
+  },
+  "private_gpt.utils": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.ingest.ingest_component",
+      "private_gpt.components.llm.llm_component",
+      "private_gpt.utils.ollama"
+    ],
+    "name": "private_gpt.utils",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/utils/__init__.py"
+  },
+  "private_gpt.utils.eta": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.ingest.ingest_component"
+    ],
+    "name": "private_gpt.utils.eta",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/utils/eta.py"
+  },
+  "private_gpt.utils.ollama": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "private_gpt.components.embedding.embedding_component",
+      "private_gpt.components.llm.llm_component"
+    ],
+    "imports": ["private_gpt", "private_gpt.utils", "private_gpt.utils.retry"],
+    "name": "private_gpt.utils.ollama",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/utils/ollama.py"
+  },
+  "private_gpt.utils.retry": {
+    "bacon": 1,
+    "imported_by": ["__main__", "private_gpt.utils.ollama"],
+    "name": "private_gpt.utils.retry",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/utils/retry.py"
+  },
+  "private_gpt.utils.typing": {
+    "bacon": 1,
+    "imported_by": ["__main__"],
+    "name": "private_gpt.utils.typing",
+    "path": "/Users/guntas13/Desktop/JetBrains Projects/CS202-STT-Labs/Lab9_LCOM/private-gpt/private_gpt/utils/typing.py"
+  },
+  "yaml": {
+    "bacon": 2,
+    "imported_by": ["private_gpt.settings.yaml"],
+    "name": "yaml",
+    "path": "/Users/guntas13/micromamba/envs/sttPy10/lib/python3.10/site-packages/yaml/__init__.py"
+  }
+}
